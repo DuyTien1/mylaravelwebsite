@@ -1,0 +1,46 @@
+	<!-- <script type="text/javascript">
+		$('#keywords').keyup(function () {
+			var query = $(this).val();
+			if (query != '') {
+				var _token = $('input[name="_token"]').val();
+				$.ajax ({
+					url:"{{ url('autocomplete_ajax') }}",
+					method:"post",
+					data:{query:query, _token:_token},
+					success:function(data) {
+						$('#search-ajax').fadeIn();
+						$('#search-ajax').html(data);
+					}
+				});
+			} else {
+				$('search-ajax').fadeOut();
+			}
+		});
+		$(document).on('click', 'li', function () {
+			$('#keywords').val($(this).text());
+			$('#search-ajax').fadeOut();
+		});
+
+
+		var path = "{{ route('autocomplete-ajax') }}";
+			$( "#keywords" ).autocomplete({
+				source: function( request, response ) {
+				$.ajax({
+					url: path,
+					type: 'post',
+					dataType: "json",
+					data: {
+						search: request.term
+					},
+					success: function( product ) {
+						response( product );
+					}
+				});
+				},
+				select: function (event, ui) {
+					$('#keywords').val(ui.item.label);
+					console.log(ui.item); 
+					return false;
+				}
+			});
+	</script> -->
